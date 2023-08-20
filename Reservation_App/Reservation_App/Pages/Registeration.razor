@@ -1,0 +1,63 @@
+﻿@page "/register"
+@using Common.ViewModel;
+@inject UserService userService
+
+<h3>Registeration</h3>
+
+<EditForm Model="@customerViewModel" OnValidSubmit="RegisterCustomer">
+    <DataAnnotationsValidator/>
+    <div class="from-group">
+        <label for="emailInput">Email:</label>
+        <InputText id="emailInput" @bind-Value="customerViewModel.Email" class="form-control" />
+        <ValidationMessage For="@(()=>customerViewModel.Email)" />
+    </div>
+
+    <div class="from-group">
+        <label for="passwordInput">Password:</label>
+        <InputText id="passwordInput" @bind-Value="customerViewModel.Password" class="form-control" type="password" />
+        <ValidationMessage For="@(()=>customerViewModel.Password)" />
+    </div>
+
+    <div class="from-group">
+        <label for="fnameInput">First Name:</label>
+        <InputText id="fnameInput" @bind-Value="customerViewModel.FirstName" class="form-control" />
+        <ValidationMessage For="@(()=>customerViewModel.FirstName)" />
+    </div>
+
+    <div class="from-group">
+        <label for="lnameInput">Last Name:</label>
+        <InputText id="lnameInput" @bind-Value="customerViewModel.LastName" class="form-control" />
+        <ValidationMessage For="@(()=>customerViewModel.LastName)" />
+    </div>
+
+    <div class="from-group">
+        <label for="phoneInput">Phone:</label>
+        <InputText id="phoneInput" @bind-Value="customerViewModel.Phone" class="form-control" type="number" />
+        <ValidationMessage For="@(()=>customerViewModel.Phone)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</EditForm>
+
+<p>@message</p>
+
+
+@code {
+    private CustomerViewModel customerViewModel = new();
+    private string message = "";
+
+    private async Task RegisterCustomer()
+    {
+        bool isRegistered = await userService.Register(customerViewModel);
+        if (isRegistered)
+        {
+            message = "Registered successful!";
+
+            //Redirect To home
+        }
+        else
+        {
+            message = "Registered failed!";
+        }
+    }
+}
