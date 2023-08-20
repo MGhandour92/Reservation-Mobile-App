@@ -1,0 +1,1 @@
+C:\Users\GunZ\source\repos\FirstAppMaui\FirstAppMaui\FirstAppMaui.csproj;x64
