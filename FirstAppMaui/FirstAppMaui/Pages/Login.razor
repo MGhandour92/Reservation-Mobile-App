@@ -1,6 +1,8 @@
 ﻿@page "/login"
 @using Common.ViewModel;
 @inject UserService userService
+@inject CustomAuthStateProvider AuthStateProvider 
+@inject NavigationManager navMgr
 
 <h3>Login</h3>
 
@@ -30,12 +32,16 @@
 
     private async Task LoginService()
     {
-        bool isAuthenticated = await userService.Login(loginViewModel);
-        if (isAuthenticated)
+        var authUser = await userService.Login(loginViewModel);
+        if (authUser is not null)
         {
+            await AuthStateProvider.Login(authUser);
+
+
             message = "Login successful!";
 
             //Redirect To home
+            navMgr.NavigateTo("");
         }
         else
         {

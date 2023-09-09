@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj": {}
+  },
+  "projects": {
+    "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\GunZ\\.nuget\\packages\\",
+        "outputPath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\obj\\",
+=======
     "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj": {}
   },
   "projects": {
@@ -12,6 +25,7 @@
         "projectPath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\mohamed.ghandour\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\obj\\",
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

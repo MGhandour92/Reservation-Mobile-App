@@ -2,6 +2,7 @@
 using Common.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -16,15 +17,29 @@ namespace API.Controllers
 			_dBContext = dBContext;
 		}
 
-		/// <summary>
-		/// Endpoint return Customer Object by Id
-		/// </summary>
-		/// <param name="id">Customer Id</param>
-		/// <returns>Customer Object</returns>
-		[HttpGet("{id}")]
+        // GET: api/Customers
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        {
+            if (_dBContext.Customers == null)
+            {
+                return NotFound();
+            }
+            return await _dBContext.Customers.ToListAsync();
+        }
+
+        /// <summary>
+        /// Endpoint return Customer Object by Id
+        /// </summary>
+        /// <param name="id">Customer Id</param>
+        /// <returns>Customer Object</returns>
+        [HttpGet("{id}")]
 		public IActionResult GetCustomerById(int id)
 		{
-			var returnedCustomer = _dBContext.Customers?.Find(id);
+            if (_dBContext.Customers == null)
+                return NotFound();
+
+            var returnedCustomer = _dBContext.Customers?.Find(id);
 
 			if (returnedCustomer == null)
 				return NotFound();
@@ -42,6 +57,7 @@ namespace API.Controllers
 			return Ok(customerVM);
 		}
 
+
 		/// <summary>
 		/// Endpoint Create New Customer
 		/// </summary>
@@ -51,6 +67,11 @@ namespace API.Controllers
 		[Route("register")]
 		public IActionResult Registeration([FromBody] CustomerViewModel customerVM)
 		{
+            if (_dBContext.Customers == null)
+            {
+                return Problem("Entity set 'MyDBContext.Customers'  is null.");
+            }
+            
 			if (!ModelState.IsValid)
 				return BadRequest("Input Data is not valid");
 
@@ -83,24 +104,80 @@ namespace API.Controllers
 			if (!ModelState.IsValid)
 				return BadRequest();
 
-			var loginValid = ValidateCredentials(loginViewModel.Email, loginViewModel.Password);
+			var validCustomer = ValidateCredentials(loginViewModel.Email, loginViewModel.Password);
 
-			if (!loginValid)
+			if (validCustomer is null)
 			{
 				return Unauthorized(new { Message = "Authentication failed" });
 			}
 
-			return Ok(new { Message = "Authentication Successful" });
+			return Ok(validCustomer.Id);
 		}
 
 
-		//Helper Methods
-		private bool ValidateCredentials(string userEmail, string password)
+        // PUT: api/Customers1/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCustomer(int id, Customer customer)
+        {
+            if (id != customer.Id)
+            {
+                return BadRequest();
+            }
+
+            _dBContext.Entry(customer).State = EntityState.Modified;
+
+            try
+            {
+                await _dBContext.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CustomerExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // DELETE: api/Customers1/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCustomer(int id)
+        {
+            if (_dBContext.Customers == null)
+            {
+                return NotFound();
+            }
+            var customer = await _dBContext.Customers.FindAsync(id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            _dBContext.Customers.Remove(customer);
+            await _dBContext.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        //Helper Methods
+        private Customer? ValidateCredentials(string userEmail, string password)
 		{
 			var customer =  _dBContext.Customers?.FirstOrDefault(user=> 
 														user.Email!.ToUpper() == userEmail.ToUpper()
 														&& user.Password!.ToUpper() == password.ToUpper());
-			return customer is not null;
+			return customer;
 		}
-	}
+
+        private bool CustomerExists(int id)
+        {
+            return (_dBContext.Customers?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+    }
 }

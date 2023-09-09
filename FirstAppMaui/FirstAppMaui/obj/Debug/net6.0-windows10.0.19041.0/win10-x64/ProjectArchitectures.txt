@@ -1,1 +1,1 @@
-C:\Users\GunZ\source\repos\FirstAppMaui\FirstAppMaui\FirstAppMaui.csproj;x64
+D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\FirstAppMaui.csproj;x64

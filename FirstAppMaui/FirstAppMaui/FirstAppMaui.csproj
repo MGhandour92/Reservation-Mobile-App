@@ -50,11 +50,29 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Remove="Pages\ManageCustomers.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.21" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="RestSharp" Version="110.2.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Common\Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Pages\ManageCustomers.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\ManageCustomers.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Pages\ManageCustomers.razor" />
     </ItemGroup>
 
 </Project>

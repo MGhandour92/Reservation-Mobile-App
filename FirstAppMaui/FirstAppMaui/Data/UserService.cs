@@ -1,5 +1,6 @@
 ﻿using Common;
 using Common.ViewModel;
+using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,38 +11,58 @@ using System.Threading.Tasks;
 
 namespace FirstAppMaui.Data
 {
-	public class UserService
-	{
-		private readonly RestClient _client;
+    public class UserService
+    {
+        private readonly RestClient _client;
 
-		public UserService()
-		{
-			//_client = new RestClient("http://10.0.2.2:5057/");
-			_client = new RestClient("http://localhost:5057/");
-		}
+        public UserService()
+        {
+            //_client = new RestClient("http://10.0.2.2:5057/");
+            _client = new RestClient("http://localhost:5057/");
+        }
 
-		public async Task<bool> Login(LoginViewModel loginViewModel)
-		{
-			//Call Endpoint - API 
-			var request = new RestRequest("api/customers/login");
+        public async Task<string> Login(LoginViewModel loginViewModel)
+        {
+            //Call Endpoint - API 
+            var request = new RestRequest("api/customers/login");
 
-			request.AddBody(loginViewModel);
+            request.AddBody(loginViewModel);
 
-			var response = await _client.ExecutePostAsync(request);
+            var response = await _client.ExecutePostAsync(request);
 
-			return response.IsSuccessful;
-		}
+            if (response.IsSuccessful)
+            {
+                return JsonConvert.DeserializeObject<string>(response.Content);
+            }
 
-		public async Task<bool> Register(CustomerViewModel customerViewModel)
-		{
-			//Call Endpoint - API 
-			var request = new RestRequest("api/customers/register");
+            return null;
+        }
 
-			request.AddBody(customerViewModel);
+        public async Task<bool> Register(CustomerViewModel customerViewModel)
+        {
+            //Call Endpoint - API 
+            var request = new RestRequest("api/customers/register");
 
-			var response = await _client.ExecutePostAsync(request);
+            request.AddBody(customerViewModel);
 
-			return response.IsSuccessful;
-		}
-	}
+            var response = await _client.ExecutePostAsync(request);
+
+            return response.IsSuccessful;
+        }
+
+        public async Task<CustomerViewModel> GetUserById(string UserId)
+        {
+            //Call Endpoint - API 
+            var request = new RestRequest("api/customers/" + UserId);
+
+            var response = await _client.ExecuteGetAsync(request);
+
+            if (response.IsSuccessful)
+            {
+                return JsonConvert.DeserializeObject<CustomerViewModel>(response.Content);
+            }
+
+            return null;
+        }
+    }
 }

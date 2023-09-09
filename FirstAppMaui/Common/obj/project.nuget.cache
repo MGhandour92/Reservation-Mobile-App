@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "zn/wvLp6/Z9yjZ+5lEgH2l+0zag3f7noUO/QzJiwXukDIHEC/dzEwvR0HtL1TA8JmzzNTAodsjJXrh+VuPCGHA==",
+  "success": true,
+  "projectFilePath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
+=======
   "dgSpecHash": "PLR2Hxu9y6xSCYEwUD2FRMRhuLAnVfdzRhAEyb5oE5esJvxjzfuiabqAkJ/wQRF7kRzRJtZ7YoP+/hkjVt+LQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
   "expectedPackageFiles": [],
   "logs": []
 }

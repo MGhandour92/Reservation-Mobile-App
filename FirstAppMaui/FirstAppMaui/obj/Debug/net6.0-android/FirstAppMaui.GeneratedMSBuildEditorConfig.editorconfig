@@ -9,6 +9,16 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FirstAppMaui
 build_property.RootNamespace = FirstAppMaui
+<<<<<<< HEAD
+build_property.ProjectDir = D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/App.xaml]
+=======
 build_property.ProjectDir = C:\Users\mohamed.ghandour\Documents\Geidea\Personal\FL\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
@@ -17,83 +27,149 @@ build_property.MSBuildProjectDirectory = C:\Users\mohamed.ghandour\Documents\Gei
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/App.xaml]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FirstAppMaui.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/MainPage.xaml]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/MainPage.xaml]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FirstAppMaui.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Main.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Main.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = TWFpbi5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Counter.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Counter.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/CustomerDetails.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/FetchData.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/FetchData.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Index.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Index.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Login.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Login.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Registeration.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Registeration.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/Logout.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ291dC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/SurveyPrompt.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/SurveyPrompt.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/_Imports.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/_Imports.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/MainLayout.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/MainLayout.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-zo7xhaw59u
 
+<<<<<<< HEAD
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/NavMenu.razor]
+=======
 [C:/Users/mohamed.ghandour/Documents/Geidea/Personal/FL/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Shared/NavMenu.razor]
+>>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=

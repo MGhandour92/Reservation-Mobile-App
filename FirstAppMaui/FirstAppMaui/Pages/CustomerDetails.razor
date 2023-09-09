@@ -1,0 +1,89 @@
+﻿@page "/customerdetails/{id}"
+@using Common.Entities;
+@using Common.ViewModel;
+@using FirstAppMaui.Data;
+@inject CustomerService custService
+@inject IJSRuntime JsRuntime
+
+<h3>Customer Details</h3>
+@if (customer == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="@customer" OnValidSubmit="UpdateCustomer">
+        <DataAnnotationsValidator />
+        <div class="from-group">
+            <label for="fname">First Name:</label>
+            <InputText id="fame" @bind-Value="customer.FirstName" class="form-control" />
+            <ValidationMessage For="@(()=>customer.FirstName)" />
+        </div>
+        <div class="from-group">
+            <label for="lname">Last Name:</label>
+            <InputText id="lname" @bind-Value="customer.LastName" class="form-control" />
+            <ValidationMessage For="@(()=>customer.LastName)" />
+        </div>
+        <div class="from-group">
+            <label for="emailInput">Email:</label>
+            <InputText id="emailInput" @bind-Value="customer.Email" class="form-control" />
+            <ValidationMessage For="@(()=>customer.Email)" />
+        </div>
+
+        <div class="from-group">
+            <label for="phone">Phone:</label>
+            <InputText id="phone" @bind-Value="customer.Phone" class="form-control" />
+            <ValidationMessage For="@(()=>customer.Phone)" />
+        </div>
+
+        <div class="from-group">
+            <label for="passwordInput">Password:</label>
+            <InputText id="passwordInput" @bind-Value="customer.Password" class="form-control" />
+            <ValidationMessage For="@(()=>customer.Password)" />
+        </div>
+
+        <button type="submit" class="btn btn-warning">Update</button>
+        <button class="btn btn-danger" @onclick="DeleteCustomer" data-val="false">Delete</button>
+    </EditForm>
+}
+
+@code {
+    [Parameter] public string id { get; set; }
+    private CustomerViewModel customer = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        customer = await custService.GetCustomerById(id);
+    }
+
+    private async Task UpdateCustomer()
+    {
+        var customerToUpdate = new Customer
+            {
+                Id = Convert.ToInt32(id),
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                Email = customer.Email,
+                Phone = customer.Phone,
+                Password = customer.Password
+            };
+
+        var success =  await custService.UpdateCustomer(id, customerToUpdate);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+        }
+    }
+
+    private async Task DeleteCustomer()
+    {
+        var success = await custService.DeleteCustomer(id);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Deleted Successfully!");
+        }
+    }
+}

@@ -1,0 +1,48 @@
+﻿@page "/managecustomers"
+@using Common.Entities;
+@using Common.ViewModel;
+@using FirstAppMaui.Data;
+@inject CustomerService custService
+
+<h3>Manage Customers</h3>
+@if (customers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cust in customers)
+            {
+                <tr>
+                    <td>@cust.FirstName</td>
+                    <td>@cust.LastName</td>
+                    <td>@cust.Email</td>
+                    <td>@cust.Phone</td>
+                    <td><a href="/customerdetails/@cust.Id">View Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private List<Customer> customers = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        customers = await custService.GetCustomers();
+    }
+
+}

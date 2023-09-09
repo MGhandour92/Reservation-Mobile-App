@@ -1,0 +1,15 @@
+﻿@page "/logout"
+
+@inject NavigationManager navMgr
+@inject CustomAuthStateProvider AuthStateProvider
+
+<div>Redirecting ...</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        AuthStateProvider.Logout();
+
+        navMgr.NavigateTo("/login");
+    }
+}

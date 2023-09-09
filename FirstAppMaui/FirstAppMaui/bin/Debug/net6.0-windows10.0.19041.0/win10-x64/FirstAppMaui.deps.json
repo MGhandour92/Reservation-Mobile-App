@@ -10,10 +10,12 @@
       "FirstAppMaui/1.0": {
         "dependencies": {
           "Common": "1.0.0",
+          "Microsoft.AspNetCore.Components.Authorization": "6.0.21",
           "Microsoft.AspNetCore.Components.WebView.Maui": "6.0.552",
           "Microsoft.Maui.Dependencies": "6.0.552",
           "Microsoft.Maui.Extensions": "6.0.552",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
+          "Newtonsoft.Json": "13.0.3",
           "RestSharp": "110.2.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "6.0.15",
           "runtimepack.Microsoft.Maui.Core.Runtime.win": "6.0.552",
@@ -898,35 +900,47 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authorization/6.0.8": {
+      "Microsoft.AspNetCore.Authorization/6.0.21": {
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "6.0.8",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "Microsoft.AspNetCore.Metadata": "6.0.21",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.4",
           "Microsoft.Extensions.Options": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Authorization.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.822.36316"
+            "fileVersion": "6.0.2123.36438"
           }
         }
       },
-      "Microsoft.AspNetCore.Components/6.0.8": {
+      "Microsoft.AspNetCore.Components/6.0.21": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "6.0.8",
-          "Microsoft.AspNetCore.Components.Analyzers": "6.0.8"
+          "Microsoft.AspNetCore.Authorization": "6.0.21",
+          "Microsoft.AspNetCore.Components.Analyzers": "6.0.21"
         },
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Components.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.822.36316"
+            "fileVersion": "6.0.2123.36438"
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/6.0.8": {},
+      "Microsoft.AspNetCore.Components.Analyzers/6.0.21": {},
+      "Microsoft.AspNetCore.Components.Authorization/6.0.21": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "6.0.21",
+          "Microsoft.AspNetCore.Components": "6.0.21"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.2123.36438"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/6.0.8": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.8"
+          "Microsoft.AspNetCore.Components": "6.0.21"
         },
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Components.Forms.dll": {
@@ -937,7 +951,7 @@
       },
       "Microsoft.AspNetCore.Components.Web/6.0.8": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.8",
+          "Microsoft.AspNetCore.Components": "6.0.21",
           "Microsoft.AspNetCore.Components.Forms": "6.0.8",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.JSInterop": "6.0.8",
@@ -968,7 +982,7 @@
       },
       "Microsoft.AspNetCore.Components.WebView.Maui/6.0.552": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "6.0.8",
+          "Microsoft.AspNetCore.Authorization": "6.0.21",
           "Microsoft.AspNetCore.Components.WebView": "6.0.8",
           "Microsoft.JSInterop": "6.0.8"
         },
@@ -979,11 +993,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Metadata/6.0.8": {
+      "Microsoft.AspNetCore.Metadata/6.0.21": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Metadata.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.822.36316"
+            "fileVersion": "6.0.2123.36438"
           }
         }
       },
@@ -1130,7 +1144,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.4",
           "Microsoft.Extensions.Options": "6.0.0",
           "System.Diagnostics.DiagnosticSource": "6.0.0"
         },
@@ -1141,11 +1155,11 @@
           }
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/6.0.1": {
+      "Microsoft.Extensions.Logging.Abstractions/6.0.4": {
         "runtime": {
           "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.322.12309"
+            "fileVersion": "6.0.1823.26907"
           }
         }
       },
@@ -1209,7 +1223,7 @@
           "Microsoft.Extensions.Configuration": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Logging": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         }
       },
       "Microsoft.Maui.Graphics/6.0.501": {
@@ -1287,6 +1301,14 @@
         "native": {
           "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
           }
         }
       },
@@ -1376,26 +1398,33 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Authorization/6.0.8": {
+    "Microsoft.AspNetCore.Authorization/6.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rDLMah6FOtFoC5uWDxnevcH/FqEs+APgmTqEvcLj3OU6Y/X8M5ASm/EdlQh6B+Z2XsQW5xu+K8tyn7w7OgOX8A==",
-      "path": "microsoft.aspnetcore.authorization/6.0.8",
-      "hashPath": "microsoft.aspnetcore.authorization.6.0.8.nupkg.sha512"
+      "sha512": "sha512-MvAxCbhKxETAOGYK+4aRqxh5ot/O/cuLcf5wDPtJYFerCBpOU0SJiYMurgtBLMqsRjDBUhuC4HHDZ1PIbG0/ng==",
+      "path": "microsoft.aspnetcore.authorization/6.0.21",
+      "hashPath": "microsoft.aspnetcore.authorization.6.0.21.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components/6.0.8": {
+    "Microsoft.AspNetCore.Components/6.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PB0k59EAiTctVaI5Yq3YHvwodXcsAcXPAn9TWJ9Yz+qrJ1+vuvP9sIBdnDgJKIzKLX6fg6QwKIGoO80B42G+aA==",
-      "path": "microsoft.aspnetcore.components/6.0.8",
-      "hashPath": "microsoft.aspnetcore.components.6.0.8.nupkg.sha512"
+      "sha512": "sha512-8LFg6bEuTEXhZhqhZ1J949E6XcEKfMra8kIEeT/JRVOvXgqxRpROQdMYqyjr5hhKwWZb02duUb8Y7frDZhjtLw==",
+      "path": "microsoft.aspnetcore.components/6.0.21",
+      "hashPath": "microsoft.aspnetcore.components.6.0.21.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Analyzers/6.0.8": {
+    "Microsoft.AspNetCore.Components.Analyzers/6.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-87BAjhlq/NEo00EtVc2MzXwaGTfF8q6fbeoefd/u3wN13G0LrCMAt5hUMNeu4Fz4TOz5FbuHUoBopPo7mENTuQ==",
-      "path": "microsoft.aspnetcore.components.analyzers/6.0.8",
-      "hashPath": "microsoft.aspnetcore.components.analyzers.6.0.8.nupkg.sha512"
+      "sha512": "sha512-GgE3txkUVSYpKA0H6pXxqvgj2dEPT+uREYQ3aZRczrkoqSPqNb1sV6v/22DtmRVy7OI2jMWRPe5AQ+sqv7kHwQ==",
+      "path": "microsoft.aspnetcore.components.analyzers/6.0.21",
+      "hashPath": "microsoft.aspnetcore.components.analyzers.6.0.21.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.Authorization/6.0.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mkOSJmpyY5VXqJlNmODzIAI7VNvx3IeZTaOLrsybfuh895o3PS0eo+ZU68rJ6enDzKFeGqBlwQgheUB7VgIlnQ==",
+      "path": "microsoft.aspnetcore.components.authorization/6.0.21",
+      "hashPath": "microsoft.aspnetcore.components.authorization.6.0.21.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/6.0.8": {
       "type": "package",
@@ -1425,12 +1454,12 @@
       "path": "microsoft.aspnetcore.components.webview.maui/6.0.552",
       "hashPath": "microsoft.aspnetcore.components.webview.maui.6.0.552.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Metadata/6.0.8": {
+    "Microsoft.AspNetCore.Metadata/6.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RWENSe/yFqVSSOQuzVUhgJzXIVoF+AQ4N6FOxLM1/FmWWT9Ngdbhrx8LgauuFmz/2yqka6PCjtveiUasjTl/2A==",
-      "path": "microsoft.aspnetcore.metadata/6.0.8",
-      "hashPath": "microsoft.aspnetcore.metadata.6.0.8.nupkg.sha512"
+      "sha512": "sha512-l4khW8WQKQ9X8y54yxGkvTytLpK76f1ZCamQCsivK2VyK97pDsM/K5U5mw43uVAHXDm2nQ5CvtgNdqsrjBLAqg==",
+      "path": "microsoft.aspnetcore.metadata/6.0.21",
+      "hashPath": "microsoft.aspnetcore.metadata.6.0.21.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/6.0.1": {
       "type": "package",
@@ -1523,12 +1552,12 @@
       "path": "microsoft.extensions.logging/6.0.0",
       "hashPath": "microsoft.extensions.logging.6.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/6.0.1": {
+    "Microsoft.Extensions.Logging.Abstractions/6.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dzB2Cgg+JmrouhjkcQGzSFjjvpwlq353i8oBQO2GWNjCXSzhbtBRUf28HSauWe7eib3wYOdb3tItdjRwAdwCSg==",
-      "path": "microsoft.extensions.logging.abstractions/6.0.1",
-      "hashPath": "microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512"
+      "sha512": "sha512-K14wYgwOfKVELrUh5eBqlC8Wvo9vvhS3ZhIvcswV2uS/ubkTRPSQsN557EZiYUSSoZNxizG+alN4wjtdyLdcyw==",
+      "path": "microsoft.extensions.logging.abstractions/6.0.4",
+      "hashPath": "microsoft.extensions.logging.abstractions.6.0.4.nupkg.sha512"
     },
     "Microsoft.Extensions.Options/6.0.0": {
       "type": "package",
@@ -1599,6 +1628,13 @@
       "sha512": "sha512-gGeFfN1AQiIo6DaPe4KkOvlx/EDjwq/Lc+Q3EzX+U4x/hsiZkls/XqFpNTjELyYgsxl8g0SiPzguJ7A1dlhC6Q==",
       "path": "microsoft.windowsappsdk/1.1.5",
       "hashPath": "microsoft.windowsappsdk.1.1.5.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
     "RestSharp/110.2.0": {
       "type": "package",
