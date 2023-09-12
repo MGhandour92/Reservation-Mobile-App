@@ -1,0 +1,110 @@
+﻿@page "/cardetails/{id}/{action}"
+@using Common.Entities;
+@using Common.ViewModel;
+@using FirstAppMaui.Data;
+@inject CarService carService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<h3>Car Details</h3>
+
+@if (car == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="@car">
+        <DataAnnotationsValidator />
+        <div class="from-group">
+            <label for="make">Make:</label>
+            <InputText id="make" @bind-Value="car.Make" class="form-control" />
+            <ValidationMessage For="@(()=>car.Make)" />
+        </div>
+        <div class="from-group">
+            <label for="model">Model:</label>
+            <InputText id="model" @bind-Value="car.Model" class="form-control" />
+            <ValidationMessage For="@(()=>car.Model)" />
+        </div>
+        <div class="from-group">
+            <label for="year">Year:</label>
+            <InputText id="year" @bind-Value="car.Year" class="form-control" type="number" />
+            <ValidationMessage For="@(()=>car.Year)" />
+        </div>
+
+        <div class="from-group">
+            <label for="license">License:</label>
+            <InputText id="license" @bind-Value="car.License" class="form-control" type="number" />
+            <ValidationMessage For="@(()=>car.License)" />
+        </div>
+
+        <button class="btn btn-success" @onclick="SaveCar">Save</button>
+    </EditForm>
+}
+@code {
+
+    //If action = "create", then id is the customer Id and show empty controls and show Save new button
+    //If action = "update", then id is the car Id, load car data in controls and show update button
+
+    [Parameter] public string id { get; set; }
+    [Parameter] public string action { get; set; }
+
+    private CustomerCarViewModel car = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (action.ToLower() == "create")
+            car = new();
+        if (action.ToLower() == "update")
+        {
+            car = await carService.GetCarById(id);
+        }
+    }
+
+    private async Task SaveCar()
+    {
+        //Create
+        if (action.ToLower() == "create")
+        {
+            var newCar = new Car
+                {
+                    Make = car.Make,
+                    Model = car.Model,
+                    Year = Convert.ToInt32(car.Year),
+                    License = Convert.ToInt32(car.License),
+                    CustomerId = Convert.ToInt32(id)
+                };
+
+            var success = await carService.CreateCar(newCar);
+
+            if (success)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Created Successfully!");
+                NavigationManager.NavigateTo($"/customercars/" + id);
+            }
+        }
+
+        if (action.ToLower() == "update")
+        {
+            var toUpdateCar = new Car
+                {
+                    Id = Convert.ToInt32(id),
+                    Make = car.Make,
+                    Model = car.Model,
+                    Year = Convert.ToInt32(car.Year),
+                    License = Convert.ToInt32(car.License),
+                    CustomerId = car.CustomerId
+                };
+
+            var success = await carService.UpdateCar(id, toUpdateCar);
+
+            if (success)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+                NavigationManager.NavigateTo($"/customercars/" + car.CustomerId);
+            }
+        }
+    }
+
+}

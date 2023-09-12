@@ -18,7 +18,7 @@ namespace Common.ViewModel
 		[Required]
 		[MinLength(3)]
 		[MaxLength(10)]
-		[DataType(DataType.PhoneNumber)]
+		[DataType(DataType.Password)]
 		public string? Password { get; set; }
 
 		[Required]

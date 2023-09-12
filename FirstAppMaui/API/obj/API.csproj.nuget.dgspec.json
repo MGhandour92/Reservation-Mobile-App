@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\API.csproj": {}
   },
   "projects": {
@@ -13,25 +12,13 @@
         "projectPath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\API.csproj",
         "packagesPath": "C:\\Users\\GunZ\\.nuget\\packages\\",
         "outputPath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\obj\\",
-=======
-    "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\API.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\API.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\API.csproj",
-        "projectName": "API",
-        "projectPath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\mohamed.ghandour\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\API\\obj\\",
->>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mohamed.ghandour\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GunZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -47,13 +34,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
               "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj": {
                 "projectPath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj"
-=======
-              "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj"
->>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
               }
             }
           }
@@ -106,11 +88,10 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-<<<<<<< HEAD
     "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -119,22 +100,13 @@
         "projectPath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\GunZ\\.nuget\\packages\\",
         "outputPath": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\obj\\",
-=======
-    "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
-        "projectName": "Common",
-        "projectPath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\mohamed.ghandour\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mohamed.ghandour\\Documents\\Geidea\\Personal\\FL\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\Common\\obj\\",
->>>>>>> 9def87c9849d7773b7a4d1f7512e66bd74aa415c
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mohamed.ghandour\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GunZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -177,7 +149,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

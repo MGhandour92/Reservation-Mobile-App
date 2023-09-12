@@ -1,0 +1,111 @@
+﻿@page "/maintenancedetails"
+@page "/maintenancedetails/{id}"
+@using Common.Entities;
+@using Common.ViewModel;
+@using FirstAppMaui.Data;
+@inject MaintenanceServicesService mSerService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<h3>Maintenance Service Details</h3>
+@if (maintenance == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="@maintenance">
+        <DataAnnotationsValidator />
+        <div class="from-group">
+            <label for="ServiceName">Service Name:</label>
+            <InputText id="ServiceName" @bind-Value="maintenance.ServiceName" class="form-control" />
+            <ValidationMessage For="@(()=>maintenance.ServiceName)" />
+        </div>
+        <div class="from-group">
+            <label for="Description">Description:</label>
+            <InputText id="Description" @bind-Value="maintenance.Description" class="form-control" />
+            <ValidationMessage For="@(()=>maintenance.Description)" />
+        </div>
+        <div class="from-group">
+            <label for="Price">Price:</label>
+            <InputNumber id="Price" @bind-Value="maintenance.Price" class="form-control" />
+            <ValidationMessage For="@(()=>maintenance.Price)" />
+        </div>
+
+
+
+        @if (!string.IsNullOrEmpty(id))
+        {
+            <button @onclick="UpdateMaintenance" class="btn btn-warning">Update</button>
+            <button class="btn btn-danger" @onclick="DeleteCustomer" data-val="false">Delete</button>
+        }
+        else
+        {
+            <button @onclick="CreateMaintenance" class="btn btn-success">Save</button>
+        }
+    </EditForm>
+}
+
+@code {
+    [Parameter] public string? id { get; set; }
+    private MaintenanceService maintenance = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        //if paramter was sent/ then go for update and create
+        if (!string.IsNullOrEmpty(id))
+            maintenance = await mSerService.GetMServiceById(id);
+        else
+            maintenance = new();
+    }
+
+    private async Task CreateMaintenance()
+    {
+        var maintenanceToUpdate = new MaintenanceService
+            {
+                Id = Convert.ToInt32(id),
+                ServiceName = maintenance.ServiceName,
+                Description = maintenance.Description,
+                Price = maintenance.Price
+            };
+
+        var success = await mSerService.CreateMaintenance(maintenanceToUpdate);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+            NavigationManager.NavigateTo($"/managemaintenance");
+        }
+    }
+
+    private async Task UpdateMaintenance()
+    {
+        var maintenanceToUpdate = new MaintenanceService
+            {
+                Id = Convert.ToInt32(id),
+                ServiceName = maintenance.ServiceName,
+                Description = maintenance.Description,
+                Price = maintenance.Price
+            };
+
+        var success = await mSerService.UpdateMService(id!, maintenanceToUpdate);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+            NavigationManager.NavigateTo($"/managemaintenance");
+        }
+    }
+
+    private async Task DeleteCustomer()
+    {
+        var success = await mSerService.DeleteMService(id!);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Deleted Successfully!");
+            NavigationManager.NavigateTo($"/managemaintenance");
+        }
+    }
+}

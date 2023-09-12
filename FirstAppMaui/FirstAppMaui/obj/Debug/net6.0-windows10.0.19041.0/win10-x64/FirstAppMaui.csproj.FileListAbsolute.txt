@@ -436,6 +436,7 @@ D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-wi
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Power.Projection.dll
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Projection.dll
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\RestSharp.dll
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\System.IO.Pipelines.dll
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\System.Text.Encodings.Web.dll
@@ -781,4 +782,3 @@ D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\obj\Debug\net6.0-wi
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
-D:\Teaching\Reservation-Mobile-App\FirstAppMaui\FirstAppMaui\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll

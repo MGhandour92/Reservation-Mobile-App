@@ -6,16 +6,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class CustomersController : ControllerBase
-	{
-		private readonly MyDBContext _dBContext;
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CustomersController : ControllerBase
+    {
+        private readonly MyDBContext _dBContext;
 
-		public CustomersController(MyDBContext dBContext)
-		{
-			_dBContext = dBContext;
-		}
+        public CustomersController(MyDBContext dBContext)
+        {
+            _dBContext = dBContext;
+        }
 
         // GET: api/Customers
         [HttpGet]
@@ -25,7 +25,7 @@ namespace API.Controllers
             {
                 return NotFound();
             }
-            return await _dBContext.Customers.ToListAsync();
+            return await _dBContext.Customers.Where(c => c.Id != 1).ToListAsync();
         }
 
         /// <summary>
@@ -34,85 +34,85 @@ namespace API.Controllers
         /// <param name="id">Customer Id</param>
         /// <returns>Customer Object</returns>
         [HttpGet("{id}")]
-		public IActionResult GetCustomerById(int id)
-		{
+        public IActionResult GetCustomerById(int id)
+        {
             if (_dBContext.Customers == null)
                 return NotFound();
 
             var returnedCustomer = _dBContext.Customers?.Find(id);
 
-			if (returnedCustomer == null)
-				return NotFound();
+            if (returnedCustomer == null)
+                return NotFound();
 
-			var customerVM = new CustomerViewModel()
-			{
-				CustomerId = id,
-				Password = returnedCustomer.Password,
-				FirstName = returnedCustomer.FirstName,
-				LastName = returnedCustomer.LastName,
-				Email = returnedCustomer.Email,
-				Phone = returnedCustomer.Phone
-			};
+            var customerVM = new CustomerViewModel()
+            {
+                CustomerId = id,
+                Password = returnedCustomer.Password,
+                FirstName = returnedCustomer.FirstName,
+                LastName = returnedCustomer.LastName,
+                Email = returnedCustomer.Email,
+                Phone = returnedCustomer.Phone
+            };
 
-			return Ok(customerVM);
-		}
+            return Ok(customerVM);
+        }
 
 
-		/// <summary>
-		/// Endpoint Create New Customer
-		/// </summary>
-		/// <param name="customerVM">Customer Object</param>
-		/// <returns></returns>
-		[HttpPost]
-		[Route("register")]
-		public IActionResult Registeration([FromBody] CustomerViewModel customerVM)
-		{
+        /// <summary>
+        /// Endpoint Create New Customer
+        /// </summary>
+        /// <param name="customerVM">Customer Object</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("register")]
+        public IActionResult Registeration([FromBody] CustomerViewModel customerVM)
+        {
             if (_dBContext.Customers == null)
             {
                 return Problem("Entity set 'MyDBContext.Customers'  is null.");
             }
-            
-			if (!ModelState.IsValid)
-				return BadRequest("Input Data is not valid");
 
-			var customerEntity = new Customer
-			{
-				Email = customerVM.Email,
-				Password = customerVM.Password,
-				FirstName = customerVM.FirstName,
-				LastName = customerVM.LastName,
-				Phone = customerVM.Phone
-			};
+            if (!ModelState.IsValid)
+                return BadRequest("Input Data is not valid");
 
-			_dBContext.Customers?.Add(customerEntity);
-			_dBContext.SaveChanges();
+            var customerEntity = new Customer
+            {
+                Email = customerVM.Email,
+                Password = customerVM.Password,
+                FirstName = customerVM.FirstName,
+                LastName = customerVM.LastName,
+                Phone = customerVM.Phone
+            };
 
-			customerVM.CustomerId = customerEntity.Id;
+            _dBContext.Customers?.Add(customerEntity);
+            _dBContext.SaveChanges();
 
-			return CreatedAtAction(nameof(GetCustomerById), new { id = customerVM.CustomerId }, customerVM);
-		}
+            customerVM.CustomerId = customerEntity.Id;
 
-		/// <summary>
-		/// Login by Email and password
-		/// </summary>
-		/// <param name="loginViewModel">Login VM</param>
-		/// <returns>Customer Object</returns>
-		[HttpPost]
-		[Route("login")]
-		public IActionResult Login([FromBody] LoginViewModel loginViewModel)
-		{
-			if (!ModelState.IsValid)
-				return BadRequest();
+            return CreatedAtAction(nameof(GetCustomerById), new { id = customerVM.CustomerId }, customerVM);
+        }
 
-			var validCustomer = ValidateCredentials(loginViewModel.Email, loginViewModel.Password);
+        /// <summary>
+        /// Login by Email and password
+        /// </summary>
+        /// <param name="loginViewModel">Login VM</param>
+        /// <returns>Customer Object</returns>
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Login([FromBody] LoginViewModel loginViewModel)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-			if (validCustomer is null)
-			{
-				return Unauthorized(new { Message = "Authentication failed" });
-			}
+            var validCustomer = ValidateCredentials(loginViewModel.Email, loginViewModel.Password);
 
-			return Ok(validCustomer.Id);
-		}
+            if (validCustomer is null)
+            {
+                return Unauthorized(new { Message = "Authentication failed" });
+            }
+
+            return Ok(validCustomer.Id);
+        }
 
 
         // PUT: api/Customers1/5
@@ -168,12 +168,12 @@ namespace API.Controllers
 
         //Helper Methods
         private Customer? ValidateCredentials(string userEmail, string password)
-		{
-			var customer =  _dBContext.Customers?.FirstOrDefault(user=> 
-														user.Email!.ToUpper() == userEmail.ToUpper()
-														&& user.Password!.ToUpper() == password.ToUpper());
-			return customer;
-		}
+        {
+            var customer = _dBContext.Customers?.FirstOrDefault(user =>
+                                                        user.Email!.ToUpper() == userEmail.ToUpper()
+                                                        && user.Password!.ToUpper() == password.ToUpper());
+            return customer;
+        }
 
         private bool CustomerExists(int id)
         {

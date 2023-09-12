@@ -4,6 +4,7 @@
 @using FirstAppMaui.Data;
 @inject CustomerService custService
 @inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
 
 <h3>Customer Details</h3>
 @if (customer == null)
@@ -69,11 +70,12 @@ else
                 Password = customer.Password
             };
 
-        var success =  await custService.UpdateCustomer(id, customerToUpdate);
+        var success = await custService.UpdateCustomer(id, customerToUpdate);
 
         if (success)
         {
             await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+            NavigationManager.NavigateTo($"/managecustomers");
         }
     }
 
@@ -84,6 +86,7 @@ else
         if (success)
         {
             await JsRuntime.InvokeVoidAsync("alert", "Deleted Successfully!");
+            NavigationManager.NavigateTo($"/managecustomers");
         }
     }
 }

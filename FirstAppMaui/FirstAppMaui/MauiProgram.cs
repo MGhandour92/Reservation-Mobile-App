@@ -35,7 +35,8 @@ public static class MauiProgram
 
         builder.Services.AddScoped<UserService>();
         builder.Services.AddScoped<CustomerService>();
-        builder.Services.AddSingleton<WeatherForecastService>();
+        builder.Services.AddScoped<CarService>();
+        builder.Services.AddScoped<MaintenanceServicesService>();
 
         return builder.Build();
     }

@@ -29,6 +29,7 @@
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -51,6 +52,7 @@
 
     <ItemGroup>
       <Content Remove="Pages\ManageCustomers.razor" />
+      <Content Remove="Pages\ManageMaintenance.razor" />
     </ItemGroup>
 
     <ItemGroup>
@@ -73,6 +75,7 @@
 
     <ItemGroup>
       <None Include="Pages\ManageCustomers.razor" />
+      <None Include="Pages\ManageMaintenance.razor" />
     </ItemGroup>
 
 </Project>

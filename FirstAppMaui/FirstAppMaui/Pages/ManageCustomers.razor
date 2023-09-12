@@ -19,6 +19,7 @@ else
                 <th>Email</th>
                 <th>Phone</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +30,10 @@ else
                     <td>@cust.LastName</td>
                     <td>@cust.Email</td>
                     <td>@cust.Phone</td>
-                    <td><a href="/customerdetails/@cust.Id">View Details</a></td>
+                    <td><a href="/customerdetails/@cust.Id">Details</a></td>
+                    <td>
+                        <a href="/customercars/@cust.Id">Cars</a>
+                    </td>
                 </tr>
             }
         </tbody>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HjnTJrnX7T289Qvy+V35GMJiMJpEZ02KVb64Oq6ksoY=",
+  "Hash": "uwGrZCApuB9sLtM3LbppyI4Zl453o/oiJGP7j8iJG8k=",
   "Source": "FirstAppMaui",
   "BasePath": "/",
   "Mode": "Root",
@@ -10,17 +10,17 @@
     {
       "Name": "FirstAppMaui\\wwwroot",
       "Source": "FirstAppMaui",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\FirstAppMaui.styles.css",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\FirstAppMaui.styles.css",
       "SourceId": "FirstAppMaui",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\",
       "BasePath": "/",
       "RelativePath": "FirstAppMaui.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\FirstAppMaui.styles.css"
+      "OriginalItemSpec": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\FirstAppMaui.styles.css"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\FirstAppMaui.bundle.scp.css",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\FirstAppMaui.bundle.scp.css",
       "SourceId": "FirstAppMaui",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\",
       "BasePath": "/",
       "RelativePath": "FirstAppMaui.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\FirstAppMaui.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\obj\\Debug\\net6.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\FirstAppMaui.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\app.css",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\app.css",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/app.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\favicon.ico",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\index.html",
+      "Identity": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\index.html",
       "SourceId": "FirstAppMaui",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\GunZ\\source\\repos\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
+      "ContentRoot": "D:\\Teaching\\Reservation-Mobile-App\\FirstAppMaui\\FirstAppMaui\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "index.html",
       "AssetKind": "All",

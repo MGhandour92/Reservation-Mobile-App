@@ -1,0 +1,73 @@
+﻿@page "/customercars/{id}"
+@using Common.Entities;
+@using Common.ViewModel;
+@using FirstAppMaui.Data;
+@inject CarService carService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<h3>Customer Cars</h3>
+
+<a href="/cardetails/@id/create" class="btn btn-primary">New Car</a>
+
+
+@if (customerCars == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>License</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in customerCars)
+            {
+                <tr>
+                    <td>@car.Make</td>
+                    <td>@car.Model</td>
+                    <td>@car.Year</td>
+                    <td>@car.License</td>
+                    <td>
+                        <a class="btn btn-warning" href="/cardetails/@car.Id/update">Edit</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="()=>DeleteCar(car.Id.ToString())">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    //customer Id
+    [Parameter] public string id { get; set; }
+    private List<Car> customerCars = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        customerCars = await carService.GetCustomerCarsByCustomerId(id);
+    }
+
+    private async Task DeleteCar(string carId)
+    {
+        var success = await carService.DeleteCar(carId);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Deleted Successfully!");
+            NavigationManager.NavigateTo($"/customercars/" + id);
+            await OnInitializedAsync();
+        }
+    }
+
+}

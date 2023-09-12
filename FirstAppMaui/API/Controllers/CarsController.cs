@@ -21,25 +21,30 @@ namespace API.Controllers
             _context = context;
         }
 
-        // GET: api/Cars
+        // GET: api/Cars?customerId=3
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Car>>> GetCars()
+        public async Task<ActionResult<IEnumerable<Car>>> GetCustomerCars(int? customerId)
         {
-          if (_context.Cars == null)
-          {
-              return NotFound();
-          }
-            return await _context.Cars.ToListAsync();
+            if (_context.Cars == null)
+            {
+                return NotFound();
+            }
+
+            if (customerId == null)
+            {
+                return BadRequest();
+            }
+            return await _context.Cars.Where(c => c.CustomerId == customerId).ToListAsync();
         }
 
         // GET: api/Cars/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Car>> GetCar(int id)
         {
-          if (_context.Cars == null)
-          {
-              return NotFound();
-          }
+            if (_context.Cars == null)
+            {
+                return NotFound();
+            }
             var car = await _context.Cars.FindAsync(id);
 
             if (car == null)
@@ -86,10 +91,10 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<Car>> PostCar(Car car)
         {
-          if (_context.Cars == null)
-          {
-              return Problem("Entity set 'MyDBContext.Cars'  is null.");
-          }
+            if (_context.Cars == null)
+            {
+                return Problem("Entity set 'MyDBContext.Cars' is null.");
+            }
             _context.Cars.Add(car);
             await _context.SaveChangesAsync();
 
