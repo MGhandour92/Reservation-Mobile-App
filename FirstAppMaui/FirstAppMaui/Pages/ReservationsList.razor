@@ -1,0 +1,70 @@
+﻿@page "/reservationslist"
+@using Common.Entities;
+@using Common.ViewModel;
+@using FirstAppMaui.Data;
+@using Microsoft.JSInterop;
+@inject ReservationDataService rService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<h3>Manage Reservations</h3>
+
+<a href="/reservationdetails" class="btn btn-primary">New Reservation</a>
+
+
+@if (reservations == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Reservation Date</th>
+                <th>Customer</th>
+                <th>Car</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in reservations)
+            {
+                <tr>
+                    <td>@reservation.ReservationDate</td>
+                    <td>@reservation.Customer!.FirstName @reservation.Customer!.LastName</td>
+                    <td>@reservation.Car!.Make - @reservation.Car.Model</td>
+                    <td>
+                        <a class="btn btn-warning" href="/reservationdetails/@reservation.Id">Edit</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="()=>DeleteReservation(reservation.Id.ToString())">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private List<Reservation> reservations = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        reservations = await rService.GetReservations();
+    }
+
+    private async Task DeleteReservation(string rId)
+    {
+        var success = await rService.DeleteReservation(rId);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Deleted Successfully!");
+            NavigationManager.NavigateTo($"/reservationslist");
+            await OnInitializedAsync();
+        }
+    }
+}

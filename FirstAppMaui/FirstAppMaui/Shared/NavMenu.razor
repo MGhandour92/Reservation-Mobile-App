@@ -16,11 +16,15 @@
             </NavLink>
         </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="register">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Register
-            </NavLink>
-        </div>
+        <AuthorizeView>
+            <NotAuthorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="register">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> Register
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
 
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="logout">
@@ -32,6 +36,16 @@
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="managecustomers">
                     <span class="oi oi-list-rich" aria-hidden="true"></span> Manage Customers
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="managemaintenance">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Manage Maintenance
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="reservationslist">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Manage Reservations
                 </NavLink>
             </div>
         </AuthorizeView>

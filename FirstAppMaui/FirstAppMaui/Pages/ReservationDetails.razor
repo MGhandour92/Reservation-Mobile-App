@@ -1,0 +1,139 @@
+﻿@page "/reservationdetails"
+@page "/reservationdetails/{id}"
+@using Common.Entities;
+@using Common.ViewModel;
+@using FirstAppMaui.Data;
+@inject ReservationDataService rService
+@inject CustomerService custService
+@inject CarService carService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<h3>Reservation Details</h3>
+@if (reservation == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="@reservation">
+        <DataAnnotationsValidator />
+        <div class="from-group">
+            <label for="ReservationDate">Reservation Date:</label>
+            <InputDate id="ReservationDate" @bind-Value="reservation.ReservationDate" class="form-control" />
+            <ValidationMessage For="@(()=>reservation.ReservationDate)" />
+        </div>
+        <div class="from-group">
+            <label for="Customer">Customer:</label>
+            <select id="Customer" @onchange="CustomerSelectionChange">
+                <option selected value="0">-- Select Customer --</option>
+
+                @foreach (var cust in customers)
+                {
+                    <option value="@cust.Id">@cust.FirstName @cust.LastName</option>
+                }
+            </select>
+            <ValidationMessage For="@(()=>reservation.CustomerId)" />
+        </div>
+
+        @if (reservation.CustomerId != 0 && cars.Any())
+        {
+            <div class="from-group">
+                <label for="Car">Car:</label>
+                <select id="Car" @bind="reservation.CarId">
+                    <option selected value="0">-- Select Car --</option>
+
+                    @foreach (var car in cars)
+                    {
+                        <option value="@car.Id">@car.Make - @car.Model</option>
+                    }
+                </select>
+                <ValidationMessage For="@(()=>reservation.CarId)" />
+            </div>
+        }
+
+
+        @if (!string.IsNullOrEmpty(id))
+        {
+            <button @onclick="UpdateReservation" class="btn btn-warning">Update</button>
+            <button class="btn btn-danger" @onclick="DeleteReservation" data-val="false">Delete</button>
+        }
+        else
+        {
+            <button @onclick="CreateReservation" class="btn btn-success">Save</button>
+        }
+    </EditForm>
+}
+
+@code {
+    [Parameter] public string? id { get; set; }
+    private Reservation reservation = new();
+    private List<Customer> customers = new();
+    private List<Car> cars = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        //if paramter was sent/ then go for update and create
+        if (!string.IsNullOrEmpty(id))
+            reservation = await rService.GetReservationById(id);
+        else
+            reservation = new();
+
+        customers = await custService.GetCustomers();
+    }
+
+    private async Task CustomerSelectionChange(ChangeEventArgs args)
+    {
+        //load cars customer
+        cars = await carService.GetCustomerCarsByCustomerId(args.Value.ToString());
+        //bind customer Id in reservation
+        reservation.CustomerId = Convert.ToInt32(args.Value.ToString());
+    }
+
+    private async Task CreateReservation()
+    {
+        var newReservation = new Reservation
+            {
+                ReservationDate = reservation.ReservationDate,
+                CustomerId = reservation.CustomerId,
+                CarId = reservation.CarId
+            };
+
+        var success = await rService.CreateReservation(newReservation);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Created Successfully!");
+            NavigationManager.NavigateTo($"/reservationslist");
+        }
+    }
+
+    private async Task UpdateReservation()
+    {
+        var updatedReservation = new Reservation
+            {
+                ReservationDate = reservation.ReservationDate,
+                CustomerId = reservation.CustomerId,
+                CarId = reservation.CarId
+            };
+
+        var success = await rService.UpdateReservation(id!, updatedReservation);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+            NavigationManager.NavigateTo($"/reservationslist");
+        }
+    }
+
+    private async Task DeleteReservation()
+    {
+        var success = await rService.DeleteReservation(id!);
+
+        if (success)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Deleted Successfully!");
+            NavigationManager.NavigateTo($"/reservationslist");
+        }
+    }
+}

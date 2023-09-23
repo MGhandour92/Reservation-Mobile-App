@@ -25,8 +25,7 @@ public static class MauiProgram
 
         builder.Services.AddAuthorizationCore(options =>
         {
-            options.AddPolicy("AdminPolicy",
-                policy => policy.RequireClaim("role", "admin"));
+            options.AddPolicy("AdminPolicy", policy => policy.RequireClaim("role", "admin"));
         });
 
 
@@ -37,6 +36,7 @@ public static class MauiProgram
         builder.Services.AddScoped<CustomerService>();
         builder.Services.AddScoped<CarService>();
         builder.Services.AddScoped<MaintenanceServicesService>();
+        builder.Services.AddScoped<ReservationDataService>();
 
         return builder.Build();
     }

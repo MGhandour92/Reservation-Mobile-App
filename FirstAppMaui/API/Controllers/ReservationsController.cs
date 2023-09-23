@@ -29,7 +29,7 @@ namespace API.Controllers
           {
               return NotFound();
           }
-            return await _context.Reservations.ToListAsync();
+            return await _context.Reservations.Include(r => r.Car).Include(r=>r.Customer).ToListAsync();
         }
 
         // GET: api/Reservations/5

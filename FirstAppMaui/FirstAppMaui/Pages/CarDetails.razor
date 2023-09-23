@@ -54,7 +54,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        if (action.ToLower() == "create")
+        if (action.ToUpper() == "CREATE")
             car = new();
         if (action.ToLower() == "update")
         {

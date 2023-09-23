@@ -62,19 +62,18 @@ else
 
     private async Task CreateMaintenance()
     {
-        var maintenanceToUpdate = new MaintenanceService
+        var newMaintance = new MaintenanceService
             {
-                Id = Convert.ToInt32(id),
                 ServiceName = maintenance.ServiceName,
                 Description = maintenance.Description,
                 Price = maintenance.Price
             };
 
-        var success = await mSerService.CreateMaintenance(maintenanceToUpdate);
+        var success = await mSerService.CreateMaintenance(newMaintance);
 
         if (success)
         {
-            await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+            await JsRuntime.InvokeVoidAsync("alert", "Created Successfully!");
             NavigationManager.NavigateTo($"/managemaintenance");
         }
     }
