@@ -16,16 +16,19 @@
 }
 else
 {
-    <EditForm Model="@reservation">
+    <EditForm Model="@reservation" OnValidSubmit="SaveOrCreateReservation">
         <DataAnnotationsValidator />
+        <ValidationSummary/>
         <div class="from-group">
             <label for="ReservationDate">Reservation Date:</label>
-            <InputDate id="ReservationDate" @bind-Value="reservation.ReservationDate" class="form-control" />
+            <InputDate id="ReservationDate" @bind-Value="reservation.ReservationDate"
+                       min=@DateTime.Today.AddDays(1).ToString("yyyy'-'MM'-'dd")
+                       class="form-control" />
             <ValidationMessage For="@(()=>reservation.ReservationDate)" />
         </div>
         <div class="from-group">
             <label for="Customer">Customer:</label>
-            <select id="Customer" @onchange="CustomerSelectionChange">
+            <select id="Customer" value="@selectedCustomer" @onchange="CustomerSelectionChange" class="form-control">
                 <option selected value="0">-- Select Customer --</option>
 
                 @foreach (var cust in customers)
@@ -40,7 +43,7 @@ else
         {
             <div class="from-group">
                 <label for="Car">Car:</label>
-                <select id="Car" @bind="reservation.CarId">
+                <select id="Car" @bind="reservation.CarId" class="form-control">
                     <option selected value="0">-- Select Car --</option>
 
                     @foreach (var car in cars)
@@ -52,16 +55,7 @@ else
             </div>
         }
 
-
-        @if (!string.IsNullOrEmpty(id))
-        {
-            <button @onclick="UpdateReservation" class="btn btn-warning">Update</button>
-            <button class="btn btn-danger" @onclick="DeleteReservation" data-val="false">Delete</button>
-        }
-        else
-        {
-            <button @onclick="CreateReservation" class="btn btn-success">Save</button>
-        }
+        <button type="submit" class="btn btn-success">Save</button>
     </EditForm>
 }
 
@@ -70,12 +64,21 @@ else
     private Reservation reservation = new();
     private List<Customer> customers = new();
     private List<Car> cars = new();
+    private string selectedCustomer = "0";
 
     protected override async Task OnInitializedAsync()
     {
         //if paramter was sent/ then go for update and create
         if (!string.IsNullOrEmpty(id))
+        {
             reservation = await rService.GetReservationById(id);
+            //Select current customer if update
+            selectedCustomer = reservation.CustomerId.ToString();
+
+            cars = await carService.GetCustomerCarsByCustomerId(selectedCustomer);
+
+            this.StateHasChanged();
+        }
         else
             reservation = new();
 
@@ -90,50 +93,43 @@ else
         reservation.CustomerId = Convert.ToInt32(args.Value.ToString());
     }
 
-    private async Task CreateReservation()
+
+    private async Task SaveOrCreateReservation()
     {
-        var newReservation = new Reservation
+        //if paramter was sent/ then go for update and create
+        if (!string.IsNullOrEmpty(id))
+        {
+            var updatedReservation = new Reservation
+                {
+                    ReservationDate = reservation.ReservationDate,
+                    CustomerId = reservation.CustomerId,
+                    CarId = reservation.CarId
+                };
+
+            var success = await rService.UpdateReservation(id!, updatedReservation);
+
+            if (success)
             {
-                ReservationDate = reservation.ReservationDate,
-                CustomerId = reservation.CustomerId,
-                CarId = reservation.CarId
-            };
-
-        var success = await rService.CreateReservation(newReservation);
-
-        if (success)
-        {
-            await JsRuntime.InvokeVoidAsync("alert", "Created Successfully!");
-            NavigationManager.NavigateTo($"/reservationslist");
+                await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
+                NavigationManager.NavigateTo($"/reservationslist");
+            }
         }
-    }
+        else
+        {
+            var newReservation = new Reservation
+                {
+                    ReservationDate = reservation.ReservationDate,
+                    CustomerId = reservation.CustomerId,
+                    CarId = reservation.CarId
+                };
 
-    private async Task UpdateReservation()
-    {
-        var updatedReservation = new Reservation
+            var success = await rService.CreateReservation(newReservation);
+
+            if (success)
             {
-                ReservationDate = reservation.ReservationDate,
-                CustomerId = reservation.CustomerId,
-                CarId = reservation.CarId
-            };
-
-        var success = await rService.UpdateReservation(id!, updatedReservation);
-
-        if (success)
-        {
-            await JsRuntime.InvokeVoidAsync("alert", "Updated Successfully!");
-            NavigationManager.NavigateTo($"/reservationslist");
-        }
-    }
-
-    private async Task DeleteReservation()
-    {
-        var success = await rService.DeleteReservation(id!);
-
-        if (success)
-        {
-            await JsRuntime.InvokeVoidAsync("alert", "Deleted Successfully!");
-            NavigationManager.NavigateTo($"/reservationslist");
+                await JsRuntime.InvokeVoidAsync("alert", "Created Successfully!");
+                NavigationManager.NavigateTo($"/reservationslist");
+            }
         }
     }
 }

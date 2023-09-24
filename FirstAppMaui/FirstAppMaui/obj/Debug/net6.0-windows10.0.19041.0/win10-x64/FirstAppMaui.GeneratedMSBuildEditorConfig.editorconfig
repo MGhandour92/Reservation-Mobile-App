@@ -79,20 +79,6 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbnRlbmFuY2VEZXRhaWxzLnJh
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/ManageCustomers.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlQ3VzdG9tZXJzLnJhem9y
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/ManageMaintenance.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlTWFpbnRlbmFuY2UucmF6b3I=
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/Registeration.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
@@ -104,6 +90,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25EZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Teaching/Reservation-Mobile-App/FirstAppMaui/FirstAppMaui/Pages/ReservationMaintenance.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25NYWludGVuYW5jZS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
