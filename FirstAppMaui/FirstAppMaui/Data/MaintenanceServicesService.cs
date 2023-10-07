@@ -35,6 +35,21 @@ namespace FirstAppMaui.Data
             return null;
         }
 
+        public async Task<List<MaintenanceServiceVM>> GetMServicesWFlags()
+        {
+            //Call Endpoint - API 
+            var request = new RestRequest("api/MaintenanceServices");
+
+            var response = await _client.ExecuteGetAsync(request);
+
+            if (response.IsSuccessful)
+            {
+                return JsonConvert.DeserializeObject<List<MaintenanceServiceVM>>(response.Content);
+            }
+
+            return null;
+        }
+
         public async Task<MaintenanceService> GetMServiceById(string mServiceId)
         {
             //Call Endpoint - API 

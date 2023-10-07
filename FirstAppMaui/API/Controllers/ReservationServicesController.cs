@@ -25,21 +25,34 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ReservationService>>> GetReservationServices()
         {
-          if (_context.ReservationServices == null)
-          {
-              return NotFound();
-          }
+            if (_context.ReservationServices == null)
+            {
+                return NotFound();
+            }
             return await _context.ReservationServices.ToListAsync();
+        }
+
+
+        // GET: api/ReservationServices/getbyresid?reservationId=1
+        [HttpGet]
+        [Route("getbyreservationid")]
+        public async Task<ActionResult<IEnumerable<ReservationService>>> GetReservationServices(int reservationId)
+        {
+            if (_context.ReservationServices == null)
+            {
+                return NotFound();
+            }
+            return await _context.ReservationServices.Where(r => r.ReservationId == reservationId).ToListAsync();
         }
 
         // GET: api/ReservationServices/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ReservationService>> GetReservationService(int id)
         {
-          if (_context.ReservationServices == null)
-          {
-              return NotFound();
-          }
+            if (_context.ReservationServices == null)
+            {
+                return NotFound();
+            }
             var reservationService = await _context.ReservationServices.FindAsync(id);
 
             if (reservationService == null)
@@ -86,10 +99,10 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<ReservationService>> PostReservationService(ReservationService reservationService)
         {
-          if (_context.ReservationServices == null)
-          {
-              return Problem("Entity set 'MyDBContext.ReservationServices'  is null.");
-          }
+            if (_context.ReservationServices == null)
+            {
+                return Problem("Entity set 'MyDBContext.ReservationServices'  is null.");
+            }
             _context.ReservationServices.Add(reservationService);
             await _context.SaveChangesAsync();
 
@@ -105,6 +118,29 @@ namespace API.Controllers
                 return NotFound();
             }
             var reservationService = await _context.ReservationServices.FindAsync(id);
+            if (reservationService == null)
+            {
+                return NotFound();
+            }
+
+            _context.ReservationServices.Remove(reservationService);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+
+        // DELETE: api/ReservationServices?reservationId=1&mserviceId=2
+        [HttpDelete]
+        [Route("deletebyrm")]
+        public async Task<IActionResult> DeleteReservationServicebyParams(int reservationId, int mserviceId)
+        {
+            if (_context.ReservationServices == null)
+            {
+                return NotFound();
+            }
+            var reservationService = await _context.ReservationServices.FirstOrDefaultAsync(rm => rm.ReservationId == reservationId 
+                                                                && rm.MaintenanceServiceId == mserviceId);
             if (reservationService == null)
             {
                 return NotFound();

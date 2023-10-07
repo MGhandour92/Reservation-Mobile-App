@@ -26,6 +26,7 @@ else
                 <th>Car</th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,9 @@ else
                     <td>@reservation.Car!.Make - @reservation.Car.Model</td>
                     <td>
                         <a class="btn btn-warning" href="/reservationdetails/@reservation.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="/reservationmaintenance/@reservation.Id">Maintenance</a>
                     </td>
                     <td>
                         <button class="btn btn-danger" @onclick="()=>DeleteReservation(reservation.Id.ToString())">Delete</button>

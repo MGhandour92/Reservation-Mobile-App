@@ -1,6 +1,118 @@
 ﻿@page "/reservationmaintenance/{id}"
+@using Common.Entities;
+@using Common.ViewModel;
+@inject ReservationDataService rService
+@inject MaintenanceServicesService mSerService
+@inject RMaintenanceService rmService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+
 <h3>Reservation Maintenance</h3>
+@if (reservation == null && maintenanceServicesVM == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-bordered table-responsive">
+        <tr>
+            <td>@reservation?.ReservationDate</td>
+            <td>@reservation?.Customer?.FirstName</td>
+            <td>@reservation?.Car?.Make - @reservation?.Car?.Model</td>
+        </tr>
+    </table>
 
+    <div class="from-group">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Service Name</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mService in maintenanceServicesVM)
+                {
+                    <tr>
+                        <td>@mService.ServiceName</td>
+                        <td>@mService.Description</td>
+                        <td>
+                            <input type="checkbox" checked="@mService.Selected" class="form-control-lg" @onchange="(e)=>MaintenanceSelectionChanged(mService.Id.ToString(),e)" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+}
 @code {
+    //reservation id
+    [Parameter] public string? id { get; set; }
+    private Reservation reservation = new();
 
+    private List<MaintenanceServiceVM> maintenanceServicesVM = new();
+
+    private List<ReservationService> allReservationMaints = new();
+    private ReservationService reservationMaint;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        //if paramter was sent/ then go for update and create
+        if (!string.IsNullOrEmpty(id))
+        {
+            reservation = await rService.GetReservationById(id);
+
+            maintenanceServicesVM = await mSerService.GetMServicesWFlags();
+
+            allReservationMaints = await rmService.GetRMServices(id);
+
+            //if any mservice was founted in res maints, set flag with true
+            foreach (var item in maintenanceServicesVM)
+            {
+                item.Selected = allReservationMaints.Any(rm => rm.MaintenanceServiceId == item.Id);
+            }
+
+            reservationMaint = new();
+        }
+    }
+
+    private async Task MaintenanceSelectionChanged(string maintId, ChangeEventArgs e)
+    {
+        //res id + mid + save
+
+        if (!string.IsNullOrEmpty(maintId))
+        {
+            reservationMaint.ReservationId = reservation.Id;
+            reservationMaint.MaintenanceServiceId = Convert.ToInt32(maintId);
+
+            bool checkBoxChecked = Convert.ToBoolean(e.Value);
+
+            if (checkBoxChecked)
+            {
+                var success = await rmService.CreateRMService(reservationMaint);
+
+                if (success)
+                {
+                    await JsRuntime.InvokeVoidAsync("alert", "Maintenance Added Successfully!");
+                    NavigationManager.NavigateTo($"/reservationmaintenance/" + id);
+                    await OnInitializedAsync();
+                }
+            }
+            else
+            {
+                var success = await rmService.DeleteRMService(reservationMaint);
+
+                if (success)
+                {
+                    await JsRuntime.InvokeVoidAsync("alert", "Maintenance Removed Successfully!");
+                    NavigationManager.NavigateTo($"/reservationmaintenance/" + id);
+                    await OnInitializedAsync();
+                }
+            }
+        }
+    }
 }

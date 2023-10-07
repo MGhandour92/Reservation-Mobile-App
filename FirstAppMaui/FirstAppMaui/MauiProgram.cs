@@ -37,6 +37,8 @@ public static class MauiProgram
         builder.Services.AddScoped<CarService>();
         builder.Services.AddScoped<MaintenanceServicesService>();
         builder.Services.AddScoped<ReservationDataService>();
+        builder.Services.AddScoped<RMaintenanceService>();
+        
 
         return builder.Build();
     }

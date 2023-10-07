@@ -25,22 +25,22 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reservation>>> GetReservations()
         {
-          if (_context.Reservations == null)
-          {
-              return NotFound();
-          }
-            return await _context.Reservations.Include(r => r.Car).Include(r=>r.Customer).ToListAsync();
+            if (_context.Reservations == null)
+            {
+                return NotFound();
+            }
+            return await _context.Reservations.Include(r => r.Car).Include(r => r.Customer).ToListAsync();
         }
 
         // GET: api/Reservations/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Reservation>> GetReservation(int id)
         {
-          if (_context.Reservations == null)
-          {
-              return NotFound();
-          }
-            var reservation = await _context.Reservations.FindAsync(id);
+            if (_context.Reservations == null)
+            {
+                return NotFound();
+            }
+            var reservation = await _context.Reservations.Include(r => r.Car).Include(r => r.Customer).FirstOrDefaultAsync(r => r.Id == id);
 
             if (reservation == null)
             {
@@ -86,10 +86,10 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<Reservation>> PostReservation(Reservation reservation)
         {
-          if (_context.Reservations == null)
-          {
-              return Problem("Entity set 'MyDBContext.Reservations'  is null.");
-          }
+            if (_context.Reservations == null)
+            {
+                return Problem("Entity set 'MyDBContext.Reservations'  is null.");
+            }
             _context.Reservations.Add(reservation);
             await _context.SaveChangesAsync();
 
